@@ -184,9 +184,6 @@ void cPvrMenuSetup::Store()
   SETUPSTORE("AudioSampling", PvrSetup.AudioSampling);
 
   // HDPVR audio encoding in setup.conf is 0..1, but driver needs 3..4
-  // if audio input SPDIF is selected, audio encoding must be AAC
-  if (newPvrSetup.HDPVR_AudioInput == 2)
-     newPvrSetup.HDPVR_AudioEncoding.value = 0;
   PvrSetup.HDPVR_AudioEncoding.value = newPvrSetup.HDPVR_AudioEncoding.value + 3;
   SETUPSTORE("HDPVR_AudioEncoding", newPvrSetup.HDPVR_AudioEncoding);
 
